@@ -54,7 +54,7 @@ int main()
       }
       default:
         {
-        printf("Incorrect input maybe you mean C, F or K?");
+        printf("Incorrect input maybe you mean C, F or K?\n");
                       printf("If input value is F:\n");
           if (num <= -459.4)
             printf("Low than 0\n\n");
