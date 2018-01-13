@@ -52,9 +52,10 @@ int main(int argc, char *argv[])
             break;
         }
       }
-      case '.':         /*'.' end of input if we don't know kelvin celsium or fahrenheit*/
-      {
-          printf("If input value is F:\n");
+      default:
+        {
+        printf("Incorrect input maybe you mean C, F or K?");
+                      printf("If input value is F:\n");
           if (num <= -459.4)
             printf("Low than 0\n\n");
           else
@@ -81,11 +82,6 @@ int main(int argc, char *argv[])
             fahr = (num - 273)*(9.0/5.0)+32;
             printf("%.2f K = %.3f C\n%.2f K = %.3f F\n", num, cel, num, fahr);
           }
-          break;
-      }
-      default:
-        {
-        printf("Error");
         break;
         }
     }
