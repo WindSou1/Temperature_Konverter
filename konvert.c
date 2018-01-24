@@ -1,89 +1,38 @@
 #include <stdio.h>
-int main()
+#include <stdlib.h>
+int main(int argc, char *argv[])
 {
-    float num, cel, fahr, kelv;
-    char temp;
-    printf("Enter temperature: ");
-    scanf ("%f %c", &num, &temp);
-  switch (temp)
-  {
-      case 'F':
-      {
-          if (num <= -459.4)
-          {
-              printf("Low than absolutely 0");
-              break;
-          }
-          else
-          {
-              cel = (num - 32)*(5.0/9.0);
-              kelv = (num - 32)/(9.0/5.0)+273;
-              printf("%.2f F = %.3f C\n%.2f F = %.3f K", num, cel, num, kelv);
-              break;
-          }
-      }
-      case 'C':
-      {
-          if (num <= -273.15)
-          {
-              printf("Low than absolutely 0");
-              break;
-          }
-          else
-          {
-            kelv = num + 273;
-            fahr = num * (9.0/5.0)+32;
-            printf("%.2f C = %.3f F\n%.2f C = %.3f K", num, fahr, num, kelv);
-            break;
-          }
-      }
-      case 'K':
-      {
-          if (num <= 0.15)
-          {
-              printf("Low than absolutely 0");
-              break;
-          }
-          else
-        {
-            cel = num - 273;
-            fahr = (num - 273)*(9.0/5.0)+32;
-            printf("%.2f K = %.3f C\n%.2f K = %.3f F", num, cel, num, fahr);
-            break;
-        }
-      }
-      default:
-        {
-        printf("Incorrect input maybe you mean C, F or K?\n");
-                      printf("If input value is F:\n");
-          if (num <= -459.4)
-            printf("Low than 0\n\n");
-          else
-          {
-            cel = (num - 32)*(5.0/9.0);
-            kelv = (num - 32)/(9.0/5.0)+273;
-            printf("%.2f F = %.3f C\n%.2f F = %.3f K\n\n", num, cel, num, kelv);
-          }
-          printf("If input value is C:\n");
-          if (num <= -273.15)
-            printf ("Low than 0\n\n");
-          else
-          {
-            kelv = num + 273;
-            fahr = num * (9.0/5.0)+32;
-            printf("%.2f C = %.3f F\n%.2f C = %.3f K\n\n", num, fahr, num, kelv);
-          }
-          printf("If input value is K:\n");
-          if (num <= 0.15)
-            printf("Low than 0\n\n");
-          else
-          {
-            cel = num - 273;
-            fahr = (num - 273)*(9.0/5.0)+32;
-            printf("%.2f K = %.3f C\n%.2f K = %.3f F\n", num, cel, num, fahr);
-          }
-        break;
-        }
+    float temp;
+    char grad = 0;
+    if(argc == 3)
+        grad = *argv[2];
+    temp = atof(argv[1]);
+    if(argc == 2 || grad == 'C' || grad == 'c')
+    {
+        if(argc == 2)
+            printf("%.2f C:\n", temp);
+        if(temp <= -273.15)
+            printf("Low than 0");
+        else
+            printf("%.2f F\t%.2f K\n\n", 32.0 + temp*9.0/5.0, temp + 273.15);
+    }
+    if(argc == 2 || grad == 'F' || grad == 'f')
+    {
+    if(argc == 2)
+        printf("%.2f F:\n", temp);
+    if(temp <= -459.4)
+        printf("Low than 0");
+    else
+        printf("%.2f C\n%.2f K\n\n", (temp - 32.0)*5.0/9.0, (temp - 32.0)*5.0/9.0 + 273.15);
+    }
+    if(argc == 2 || grad == 'K' || grad == 'k')
+    {
+        if(argc == 2)
+            printf("%.2f K:\n", temp);
+        if(temp <= 0.15)
+            printf("Low than 0");
+        else
+            printf("%.2f C\n%.2f F\n\n", temp - 273.15, 32.0 + (9.0/5.0)*(temp - 273.15));
     }
     return 0;
 }
