@@ -3,11 +3,11 @@
 int main(int argc, char *argv[])
 {
     float temp;
-    char grad;
-    grad = 0;
+    char grad = 0;
     if(argc == 3)
         grad = *argv[2];
-    temp = atof(argv[1]);
+    if (argc == 2)
+        temp = atof(argv[1]);
     if(argc == 2 || grad == 'C' || grad == 'c' || !grad)
     {
         if(argc == 2 || !grad)
