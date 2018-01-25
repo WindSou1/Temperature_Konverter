@@ -3,7 +3,8 @@
 int main(int argc, char *argv[])
 {
     float temp;
-    char grad = 0;
+    char grad;
+    grad = 0;
     if(argc == 3)
         grad = *argv[2];
     temp = atof(argv[1]);
