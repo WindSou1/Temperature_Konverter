@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     if(argc == 2 || grad == 'F' || grad == 'f' || !grad)
     {
     if(argc == 2 || !grad)
-        printf("If temperature - Fahrenhei: t%.2f F\n", temp);
+        printf("If temperature - Fahrenheit: %.2f F\n", temp);
     if(temp <= -459.4)
         printf("Low than 0");
     else
