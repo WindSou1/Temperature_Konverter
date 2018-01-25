@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     if(argc == 2 || grad == 'C' || grad == 'c' || !grad)
     {
         if(argc == 2 || !grad)
-            printf("%.2f C:\n", temp);
+            printf("If temperature - Celsium: %.2f C\n", temp);
         if(temp <= -273.15)
             printf("Low than 0");
         else
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     if(argc == 2 || grad == 'F' || grad == 'f' || !grad)
     {
     if(argc == 2 || !grad)
-        printf("%.2f F:\n", temp);
+        printf("If temperature - Fahrenhei: t%.2f F\n", temp);
     if(temp <= -459.4)
         printf("Low than 0");
     else
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     if(argc == 2 || grad == 'K' || grad == 'k' || !grad)
     {
         if(argc == 2 || !grad)
-            printf("%.2f K:\n", temp);
+            printf("If temperature - Kelvin: %.2f K\n", temp);
         if(temp <= 0.15)
             printf("Low than 0");
         else
