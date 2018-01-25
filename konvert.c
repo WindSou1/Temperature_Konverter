@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     temp = atof(argv[1]);
     if(argc == 2 || grad == 'C' || grad == 'c' || !grad)
     {
-        if(argc == 2)
+        if(argc == 2 || !grad)
             printf("%.2f C:\n", temp);
         if(temp <= -273.15)
             printf("Low than 0");
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     }
     if(argc == 2 || grad == 'F' || grad == 'f' || !grad)
     {
-    if(argc == 2)
+    if(argc == 2 || !grad)
         printf("%.2f F:\n", temp);
     if(temp <= -459.4)
         printf("Low than 0");
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     }
     if(argc == 2 || grad == 'K' || grad == 'k' || !grad)
     {
-        if(argc == 2)
+        if(argc == 2 || !grad)
             printf("%.2f K:\n", temp);
         if(temp <= 0.15)
             printf("Low than 0");
